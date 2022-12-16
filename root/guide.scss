@@ -1,0 +1,37 @@
+$bgcolor: lightblue;
+@mixin important-text {
+  color: red;
+}
+selector {
+  @include important-text;
+}
+.button-basic {
+  border: none;
+  padding: 15px 30px;
+  text-align: center;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.button-report {
+  @extend .button-basic;
+  background-color: red;
+}
+@mixin bordered($color: red, $width: 56px) {
+  border: $width solid $color;
+}
+
+.myArticle {
+  @include bordered(blue, 1px); // Call mixin with two values
+}
+
+%box {
+  height: 65px;
+  width: 65px;
+  border-radius: 16px;
+  background-color: #f16718;
+}
+
+.icon {
+  @extend %box;
+}
